@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+int main() {
+    int m, n, p;
+    
+    // Dimensions
+    printf("Entrez le nombre de lignes de la matrice A : ");
+    scanf("%d", &m);
+    printf("Entrez le nombre de colonnes de la matrice A (et lignes de B) : ");
+    scanf("%d", &n);
+    printf("Entrez le nombre de colonnes de la matrice B : ");
+    scanf("%d", &p);
+
+    int A[m][n], B[n][p], C[m][p];
+
+    // Lecture de A
+    printf("Entrez les elements de la matrice A (%d x %d) :\n", m, n);
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            scanf("%d", &A[i][j]);
+        }
+    }
+
+    // Lecture de B
+    printf("Entrez les elements de la matrice B (%d x %d) :\n", n, p);
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < p; j++) {
+            scanf("%d", &B[i][j]);
+        }
+    }
+
+    // Calcul de C = A * B
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < p; j++) {
+            C[i][j] = 0;
+            for (int k = 0; k < n; k++) {
+                C[i][j] += A[i][k] * B[k][j];
+            }
+        }
+    }
+
+    // Affichage du résultat
+    printf("Le produit A x B est :\n");
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < p; j++) {
+            printf("%d ", C[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
