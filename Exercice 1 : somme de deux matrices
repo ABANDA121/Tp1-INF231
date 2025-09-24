@@ -1,0 +1,49 @@
+
+#include <stdio.h>
+int main() {
+    int i, j, lignes, colonnes;
+
+    // Demande la taille de la matrice
+    printf("Entrez le nombre de lignes : ");
+    scanf("%d", &lignes);
+    printf("Entrez le nombre de colonnes : ");
+    scanf("%d", &colonnes);
+
+    int A[lignes][colonnes], B[lignes][colonnes], C[lignes][colonnes];
+
+    // Saisie de la première matrice
+    printf("Entrez les elements de la matrice A :\n");
+    for (i = 0; i < lignes; i++) {
+        for (j = 0; j < colonnes; j++) {
+            printf("A[%d][%d] = ", i, j);
+            scanf("%d", &A[i][j]);
+        }
+    }
+
+    // Saisie de la deuxième matrice
+    printf("Entrez les elements de la matrice B :\n");
+    for (i = 0; i < lignes; i++) {
+        for (j = 0; j < colonnes; j++) {
+            printf("B[%d][%d] = ", i, j);
+            scanf("%d", &B[i][j]);
+        }
+    }
+
+    // Calcul de la somme C = A + B
+    for (i = 0; i < lignes; i++) {
+        for (j = 0; j < colonnes; j++) {
+            C[i][j] = A[i][j] + B[i][j];
+        }
+    }
+
+    // Affichage de la matrice somme
+    printf("\nLa matrice somme C est :\n");
+    for (i = 0; i < lignes; i++) {
+        for (j = 0; j < colonnes; j++) {
+            printf("%d\t", C[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
